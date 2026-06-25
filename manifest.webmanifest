@@ -1,0 +1,9 @@
+{
+  "name": "Mapa de bombas AMBA",
+  "short_name": "Bombas AMBA",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f4f6f2",
+  "theme_color": "#0d5f63",
+  "description": "Mapa interactivo de opciones para comprar bombas perifericas equivalentes o superiores a Forest Garden BP 813 en AMBA."
+}

@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0d5f63" />
+    <meta
+      name="description"
+      content="Mapa interactivo de opciones para comprar bombas perifericas equivalentes o superiores a Forest Garden BP 813 en AMBA."
+    />
+    <title>Mapa de bombas AMBA</title>
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      crossorigin=""
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Listado de opciones">
+        <header class="brand-bar">
+          <div>
+            <p class="section-kicker">Compra de bomba periferica</p>
+            <h1>Mapa de bombas AMBA</h1>
+          </div>
+          <button class="icon-button" id="shareButton" type="button" aria-label="Compartir mapa">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M16 5.5 12 1.8 8 5.5" />
+              <path d="M12 2v13" />
+              <path d="M5 10v10h14V10" />
+            </svg>
+          </button>
+        </header>
+
+        <section class="requirements" aria-label="Criterios minimos">
+          <div>
+            <span>Minimo</span>
+            <strong>33 L/min</strong>
+          </div>
+          <div>
+            <span>Altura</span>
+            <strong>25 m o mas</strong>
+          </div>
+          <div>
+            <span>Potencia</span>
+            <strong>1/2 HP</strong>
+          </div>
+        </section>
+
+        <div class="notice">
+          <strong>Referencia practica:</strong> Fluvial Nero primero, Dogo segundo, Offer solo si conviene por precio o cercania.
+          Precios y stock deben verificarse antes de salir.
+        </div>
+
+        <nav class="filter-row" aria-label="Filtros">
+          <button class="filter-chip active" type="button" data-filter="all">Todas</button>
+          <button class="filter-chip" type="button" data-filter="top">Recomendadas</button>
+          <button class="filter-chip" type="button" data-filter="near">Cerca de Lanus</button>
+          <button class="filter-chip" type="button" data-filter="retail">Cadenas</button>
+        </nav>
+
+        <div class="results-meta" id="resultsMeta" aria-live="polite"></div>
+        <div class="store-list" id="storeList"></div>
+
+        <footer class="sidebar-footer">
+          <p>
+            Datos base: informe de la conversacion "Busqueda de motor AMBA" y consulta web del 25/06/2026.
+            No reemplaza confirmar stock, garantia y conexion de 1 pulgada.
+          </p>
+        </footer>
+      </aside>
+
+      <main class="map-area">
+        <div class="map-toolbar">
+          <button class="tool-button" id="fitButton" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 9V4h5" />
+              <path d="M20 9V4h-5" />
+              <path d="M4 15v5h5" />
+              <path d="M20 15v5h-5" />
+            </svg>
+            Ver todo
+          </button>
+          <button class="tool-button" id="copyButton" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M9 9h10v10H9z" />
+              <path d="M5 15H4V4h11v1" />
+            </svg>
+            Copiar link
+          </button>
+        </div>
+
+        <div id="map" aria-label="Mapa de tiendas en AMBA"></div>
+
+        <section class="detail-panel" id="detailPanel" aria-label="Detalle de tienda" aria-live="polite"></section>
+      </main>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script src="app.js"></script>
+  </body>
+</html>

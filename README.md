@@ -8,6 +8,8 @@ Mapa estatico e interactivo para comparar opciones de compra de bombas periferic
 - Dogo IDB-35 1/2 HP como segunda recomendacion.
 - Offer 1/2 HP como opcion condicional.
 - Sucursales o tiendas fisicas del AMBA con enlaces para verificar fuente, stock y ruta.
+- Orden por ubicacion actual del navegador, sin guardar ni enviar la ubicacion a un servidor.
+- Opciones nuevas en Devoto, CABA oeste/norte y General Paz, diferenciando tiendas exactas de cadenas con stock por confirmar.
 
 Los precios son orientativos y deben verificarse el dia de compra.
 

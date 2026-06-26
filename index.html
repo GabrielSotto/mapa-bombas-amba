@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#0d5f63" />
     <meta
       name="description"
-      content="Mapa interactivo de opciones para comprar bombas perifericas equivalentes o superiores a Forest Garden BP 813 en AMBA."
+      content="Mapa interactivo de opciones para comprar bombas perifericas equivalentes o superiores a Forest Garden BP 813, con orden por ubicacion."
     />
     <title>Mapa de bombas AMBA</title>
     <link rel="manifest" href="manifest.webmanifest" />
@@ -34,67 +34,36 @@
           </button>
         </header>
 
-        <section class="requirements" aria-label="Criterios minimos">
-          <div>
-            <span>Minimo</span>
-            <strong>33 L/min</strong>
-          </div>
-          <div>
-            <span>Altura</span>
-            <strong>25 m o mas</strong>
-          </div>
-          <div>
-            <span>Potencia</span>
-            <strong>1/2 HP</strong>
-          </div>
-        </section>
-
-        <div class="notice">
-          <strong>Referencia practica:</strong> Fluvial Nero primero, Dogo segundo, Offer solo si conviene por precio o cercania.
-          Precios y stock deben verificarse antes de salir.
-        </div>
-
         <nav class="filter-row" aria-label="Filtros">
           <button class="filter-chip active" type="button" data-filter="all">Todas</button>
           <button class="filter-chip" type="button" data-filter="top">Recomendadas</button>
-          <button class="filter-chip" type="button" data-filter="near">Cerca de Lanus</button>
+          <button class="filter-chip" type="button" data-filter="nearby">Cerca mio</button>
           <button class="filter-chip" type="button" data-filter="retail">Cadenas</button>
         </nav>
 
         <div class="results-meta" id="resultsMeta" aria-live="polite"></div>
         <div class="store-list" id="storeList"></div>
-
-        <footer class="sidebar-footer">
-          <p>
-            Datos base: informe de la conversacion "Busqueda de motor AMBA" y consulta web del 25/06/2026.
-            No reemplaza confirmar stock, garantia y conexion de 1 pulgada.
-          </p>
-        </footer>
       </aside>
 
       <main class="map-area">
         <div class="map-toolbar">
-          <button class="tool-button" id="fitButton" type="button">
+          <button
+            class="tool-button"
+            id="fitButton"
+            type="button"
+            aria-label="Ver todas las opciones"
+            title="Ver todas las opciones"
+          >
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M4 9V4h5" />
               <path d="M20 9V4h-5" />
               <path d="M4 15v5h5" />
               <path d="M20 15v5h-5" />
             </svg>
-            Ver todo
-          </button>
-          <button class="tool-button" id="copyButton" type="button">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M9 9h10v10H9z" />
-              <path d="M5 15H4V4h11v1" />
-            </svg>
-            Copiar link
           </button>
         </div>
 
         <div id="map" aria-label="Mapa de tiendas en AMBA"></div>
-
-        <section class="detail-panel" id="detailPanel" aria-label="Detalle de tienda" aria-live="polite"></section>
       </main>
     </div>
 

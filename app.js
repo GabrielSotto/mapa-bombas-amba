@@ -796,35 +796,6 @@ function requestUserLocation() {
   );
 }
 
-async function copyCurrentLink() {
-  const url = window.location.href;
-  try {
-    await navigator.clipboard.writeText(url);
-    showToast("Link copiado");
-  } catch {
-    showToast(url);
-  }
-}
-
-async function shareMap() {
-  const store = stores.find((item) => item.id === selectedId);
-  const shareData = {
-    title: "Mapa de bombas AMBA",
-    text: store ? `${store.model} - ${store.store}` : "Mapa de bombas AMBA",
-    url: window.location.href,
-  };
-
-  if (navigator.share) {
-    try {
-      await navigator.share(shareData);
-      return;
-    } catch (error) {
-      if (error.name === "AbortError") return;
-    }
-  }
-  await copyCurrentLink();
-}
-
 function showToast(message) {
   const toast = document.getElementById("toast");
   toast.textContent = message;
@@ -847,7 +818,6 @@ document.querySelectorAll(".filter-chip").forEach((chip) => {
 });
 
 document.getElementById("fitButton").addEventListener("click", fitVisible);
-document.getElementById("shareButton").addEventListener("click", shareMap);
 
 map.on("moveend zoomend", () => {
   if (activeFilter === "nearby" && userLocation) {

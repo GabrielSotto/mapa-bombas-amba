@@ -271,27 +271,11 @@ h1 {
   margin: 0;
 }
 
-.icon-button {
-  align-items: center;
-  background: #102726;
-  border: 0;
-  border-radius: 8px;
-  color: white;
-  cursor: pointer;
-  display: inline-flex;
-  flex: 0 0 auto;
-  height: 42px;
-  justify-content: center;
-  width: 42px;
-}
-
-.icon-button:hover,
 .tool-button:hover,
 .filter-chip:hover {
   filter: brightness(0.96);
 }
 
-.icon-button:focus-visible,
 .tool-button:focus-visible,
 .filter-chip:focus-visible,
 .store-select:focus-visible,
@@ -705,7 +689,7 @@ svg {
   transform: translate(-50%, 0);
 }
 
-@media (min-width: 761px) and (max-width: 1100px) {
+@media (min-width: 641px) and (max-width: 1100px) {
   .brand-bar {
     padding: 20px 16px 16px;
   }
@@ -732,7 +716,7 @@ svg {
   }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 640px) {
   .app-shell {
     display: flex;
     flex-direction: column;
